@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang - EmotifyLyrics</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-music"></i>
+                <span>EmotifyLyrics</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="{{ url_for('index') }}"
+                        class="nav-link {% if request.path == '/' %}active{% endif %}">Beranda</a></li>
+                <li><a href="{{ url_for('deteksi') }}"
+                        class="nav-link {% if request.path == '/deteksi' %}active{% endif %}">Deteksi Emosi</a></li>
+                <li><a href="{{ url_for('tentang') }}"
+                        class="nav-link {% if request.path == '/tentang' %}active{% endif %}">Tentang</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="about-hero">
+        <div class="container">
+            <div class="about-header">
+                <h1>Tentang EmotifyLyrics</h1>
+                <p>Platform inovatif untuk menganalisis emosi dalam lirik lagu Indonesia menggunakan teknologi AI
+                    terdepan</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-content">
+        <div class="container">
+            <div class="about-section">
+                <div class="about-text">
+                    <h2>Apa itu EmotifyLyrics?</h2>
+                    <p>EmotifyLyrics adalah platform web yang menggunakan teknologi Machine Learning dan Deep Neural
+                        Network untuk mendeteksi emosi dalam lirik lagu bahasa Indonesia. Sistem kami dapat
+                        mengidentifikasi empat jenis emosi utama: Bahagia, Sedih, Marah, dan Takut dengan tingkat
+                        akurasi yang tinggi.</p>
+                    <p>Platform ini dikembangkan khusus untuk memahami nuansa dan konteks budaya Indonesia dalam lirik
+                        lagu, memberikan analisis yang lebih mendalam dan relevan dibandingkan dengan sistem deteksi
+                        emosi umum.</p>
+                </div>
+                <div class="about-image">
+                    <div class="tech-stack">
+                        <div class="tech-item">
+                            <i class="fas fa-brain"></i>
+                            <span>Deep Learning</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-code"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-chart-line"></i>
+                            <span>TensorFlow</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-database"></i>
+                            <span>NLP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="methodology">
+        <div class="container">
+            <h2 class="section-title">Metodologi Penelitian</h2>
+            <div class="methodology-grid">
+                <div class="methodology-step">
+                    <div class="step-number">1</div>
+                    <h3>Pengumpulan Data</h3>
+                    <p>Dataset indo-song-emot.csv berisi 360 lirik lagu Indonesia dengan label emosi yang telah
+                        divalidasi oleh ahli.</p>
+                </div>
+                <div class="methodology-step">
+                    <div class="step-number">2</div>
+                    <h3>Preprocessing</h3>
+                    <p>Tahapan pembersihan data meliputi lowercasing, penghapusan tanda baca, tokenisasi, koreksi slang
+                        word, stemming, dan stopword removal.</p>
+                </div>
+                <div class="methodology-step">
+                    <div class="step-number">3</div>
+                    <h3>Feature Engineering</h3>
+                    <p>Menggunakan TF-IDF Vectorizer untuk mengubah teks menjadi representasi numerik yang dapat
+                        dipahami oleh model machine learning.</p>
+                </div>
+                <div class="methodology-step">
+                    <div class="step-number">4</div>
+                    <h3>Model Training</h3>
+                    <p>Deep Neural Network dengan arsitektur 5 layer dan teknik SMOTE untuk mengatasi imbalanced
+                        dataset.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="tech-specs">
+        <div class="container">
+            <h2 class="section-title">Spesifikasi Teknis</h2>
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Arsitektur Model</h3>
+                    <ul>
+                        <li>Deep Neural Network 5 Layer</li>
+                        <li>Dropout untuk regularisasi</li>
+                        <li>Aktivasi ReLU dan Softmax</li>
+                        <li>Optimizer Adam</li>
+                    </ul>
+                </div>
+                <div class="spec-card">
+                    <i class="fas fa-chart-pie"></i>
+                    <h3>Performa Model</h3>
+                    <ul>
+                        <li>Akurasi Training: ~95%</li>
+                        <li>Akurasi Validasi: ~90%</li>
+                        <li>Akurasi Pengujian: 85%</li>
+                        <li>F1-Score Rata-rata: 85%</li>
+                        <li>4 Kategori Emosi</li>
+                        <li>Confidence Score</li>
+                    </ul>
+                </div>
+                <div class="spec-card">
+                    <i class="fas fa-tools"></i>
+                    <h3>Teknologi</h3>
+                    <ul>
+                        <li>Python & TensorFlow</li>
+                        <li>NLTK untuk NLP</li>
+                        <li>Scikit-learn</li>
+                        <li>Flask Web Framework</li>
+                    </ul>
+                </div>
+                <div class="spec-card">
+                    <i class="fas fa-language"></i>
+                    <h3>Preprocessing</h3>
+                    <ul>
+                        <li>Sastrawi Stemmer</li>
+                        <li>Indonesian Stopwords</li>
+                        <li>Slang Word Correction</li>
+                        <li>TF-IDF Vectorization</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team">
+        <div class="container">
+            <h2 class="section-title">Tim Pengembang</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>Data Scientist</h3>
+                    <p>Bertanggung jawab dalam pengembangan model machine learning dan analisis data untuk sistem
+                        deteksi emosi.</p>
+                    <div class="member-skills">
+                        <span>Machine Learning</span>
+                        <span>Deep Learning</span>
+                        <span>NLP</span>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Full Stack Developer</h3>
+                    <p>Mengembangkan antarmuka web yang interaktif dan sistem backend untuk integrasi model AI.</p>
+                    <div class="member-skills">
+                        <span>Python</span>
+                        <span>Flask</span>
+                        <span>JavaScript</span>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>UI/UX Designer</h3>
+                    <p>Merancang pengalaman pengguna yang intuitif dan desain antarmuka yang menarik.</p>
+                    <div class="member-skills">
+                        <span>UI Design</span>
+                        <span>UX Research</span>
+                        <span>Prototyping</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2>Hubungi Kami</h2>
+                <p>Punya pertanyaan atau saran? Jangan ragu untuk menghubungi tim kami!</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>kelompok10tie@mahasiswa.pcr.ac.id</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>085361915205</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Politeknik Caltex Riau, Indonesia, Pekanbaru, Riau</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-music"></i>
+                        <span>EmotifyLyrics</span>
+                    </div>
+                    <p>Platform deteksi emosi lirik lagu Indonesia berbasis AI yang canggih dan akurat.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigasi</h4>
+                    <ul>
+                        <li><a href="{{ url_for('index') }}">Beranda</a></li>
+                        <li><a href="{{ url_for('deteksi') }}">Deteksi Emosi</a></li>
+                        <li><a href="{{ url_for('tentang') }}">Tentang</a></li>
+
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Kontak</h4>
+                    <p><i class="fas fa-envelope"></i> kelompok10tie@mahasiswa.pcr.ac.id</p>
+                    <p><i class="fas fa-phone"></i>085361915205</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 EmotifyLyrics. Semua hak dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>

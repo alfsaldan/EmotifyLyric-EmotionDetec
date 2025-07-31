@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmotifyLyrics - Deteksi Emosi Lirik Lagu Indonesia</title>
+    <!-- Memuat CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-music"></i>
+                <span>EmotifyLyrics</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="{{ url_for('index') }}"
+                        class="nav-link {% if request.path == '/' %}active{% endif %}">Beranda</a></li>
+                <li><a href="{{ url_for('deteksi') }}"
+                        class="nav-link {% if request.path == '/deteksi' %}active{% endif %}">Deteksi Emosi</a></li>
+                <li><a href="{{ url_for('tentang') }}"
+                        class="nav-link {% if request.path == '/tentang' %}active{% endif %}">Tentang</a></li>
+
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    Temukan <span class="gradient-text">Emosi</span>
+                    dalam Lirik Lagu
+                </h1>
+                <p class="hero-subtitle">
+                    Analisis mendalam emosi dalam lirik lagu Indonesia menggunakan teknologi
+                    Natural Language Processing & Metode Deep Learning (DNN) yang canggih.
+                </p>
+                <div class="hero-buttons">
+                    <a href="{{ url_for('deteksi') }}" class="btn btn-primary">
+                        <i class="fas fa-search"></i>Mulai Deteksi</a>
+                    <a href="{{ url_for('tentang') }}" class="btn btn-secondary">
+                        <i class="fas fa-info-circle"></i>
+                        Pelajari Lebih Lanjut
+                    </a>
+
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="emotion-cards">
+                    <div class="emotion-card happy">
+                        <i class="fas fa-smile"></i>
+                        <span>Bahagia</span>
+                    </div>
+                    <div class="emotion-card sad">
+                        <i class="fas fa-sad-tear"></i>
+                        <span>Sedih</span>
+                    </div>
+                    <div class="emotion-card angry">
+                        <i class="fas fa-angry"></i>
+                        <span>Marah</span>
+                    </div>
+                    <div class="emotion-card fear">
+                        <i class="fas fa-face-frown-open"></i>
+                        <span>Takut</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Fitur Unggulan</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI Powered</h3>
+                    <p>Menggunakan Deep Neural Network dengan akurasi tinggi untuk mendeteksi emosi dalam lirik lagu
+                        Indonesia.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3>Bahasa Indonesia</h3>
+                    <p>Khusus dioptimalkan untuk lirik lagu dalam bahasa Indonesia dengan pemahaman konteks budaya
+                        lokal.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Analisis Mendalam</h3>
+                    <p>Memberikan hasil analisis emosi yang detail dengan tingkat kepercayaan yang akurat.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Cepat & Akurat</h3>
+                    <p>Proses deteksi emosi yang cepat dengan hasil yang dapat diandalkan untuk berbagai genre musik.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="emotions-overview">
+        <div class="container">
+            <h2 class="section-title">Jenis Emosi yang Dapat Dideteksi</h2>
+            <div class="emotions-grid">
+                <div class="emotion-item">
+                    <div class="emotion-icon happy-bg">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <h3>Bahagia</h3>
+                    <p>Lirik yang mengekspresikan kegembiraan, cinta, dan perasaan positif lainnya.</p>
+                </div>
+                <div class="emotion-item">
+                    <div class="emotion-icon sad-bg">
+                        <i class="fas fa-sad-tear"></i>
+                    </div>
+                    <h3>Sedih</h3>
+                    <p>Lirik yang menggambarkan kesedihan, kehilangan, dan melankolis.</p>
+                </div>
+                <div class="emotion-item">
+                    <div class="emotion-icon angry-bg">
+                        <i class="fas fa-angry"></i>
+                    </div>
+                    <h3>Marah</h3>
+                    <p>Lirik yang mengandung kemarahan, frustrasi, dan emosi intens lainnya.</p>
+                </div>
+                <div class="emotion-item">
+                    <div class="emotion-icon fear-bg">
+                        <i class="fas fa-face-frown-open"></i>
+                    </div>
+                    <h3>Takut</h3>
+                    <p>Lirik yang menunjukkan ketakutan, kecemasan, dan kekhawatiran.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Siap Menganalisis Lirik Lagu Anda?</h2>
+                <p>Temukan emosi tersembunyi dalam setiap bait lirik lagu Indonesia favorit Anda.</p>
+                <a href="{{ url_for('deteksi') }}" class="btn btn-primary btn-large">
+                    <i class="fas fa-play"></i>
+                    Mulai Sekarang
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-music"></i>
+                        <span>EmotifyLyrics</span>
+                    </div>
+                    <p>Platform deteksi emosi lirik lagu Indonesia berbasis AI yang canggih dan akurat.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigasi</h4>
+                    <ul>
+                        <li><a href="{{ url_for('index') }}">Beranda</a></li>
+                        <li><a href="{{ url_for('deteksi') }}">Deteksi Emosi</a></li>
+                        <li><a href="{{ url_for('tentang') }}">Tentang</a></li>
+
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Kontak</h4>
+                    <p><i class="fas fa-envelope"></i> kelompok10tie@mahasiswa.pcr.ac.id</p>
+                    <p><i class="fas fa-phone"></i>085361915205</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 EmotifyLyrics. Semua hak dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Memuat JS -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
