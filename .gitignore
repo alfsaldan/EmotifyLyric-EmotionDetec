@@ -2,7 +2,6 @@
 venv/
 
 # Model file
-*.h5
 
 # Binary files (besar dan tidak perlu di-push)
 *.pyd
